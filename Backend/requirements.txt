@@ -1,0 +1,22 @@
+# Web Framework
+fastapi
+uvicorn[standard]
+
+# Database
+sqlalchemy
+psycopg2-binary
+pgvector
+alembic
+
+# Data Validation & Environment Variables
+pydantic
+pydantic-settings
+python-dotenv
+
+# AI integration
+openai
+openai-agents
+
+# Security (NEW)
+PyJWT
+python-multipart
