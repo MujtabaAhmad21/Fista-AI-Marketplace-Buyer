@@ -9,6 +9,11 @@ load_dotenv()
 # Get the database URL
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
 
+# Railway / some providers use postgres:// — SQLAlchemy requires postgresql://
+if SQLALCHEMY_DATABASE_URL and SQLALCHEMY_DATABASE_URL.startswith("postgres://"):
+    SQLALCHEMY_DATABASE_URL = SQLALCHEMY_DATABASE_URL.replace("postgres://", "postgresql://", 1)
+
+
 # Create the SQLAlchemy "Engine" (The core interface to the database)
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
